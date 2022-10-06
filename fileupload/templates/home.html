@@ -35,7 +35,7 @@
                     <td>{{ book.author }}</td>
                     <td>{{ book.category }}</td>
                     <td class="form-inline">
-                        <a class="btn btn-primary mr-2" href="{{ book.pdf.url }}" role="button">Download</a>
+                        <a class="btn btn-primary mr-2" download href="{{ book.pdf.url }}" role="button">Download</a>
                         <form action="{% url 'delete_book' book.id %}" method="POST">
                             {% csrf_token %}
                             <input type="submit" role="button" class="btn btn-danger" value="Delete" onclick="return confirm('Are You sure to delete {{ book.title }}?')">
